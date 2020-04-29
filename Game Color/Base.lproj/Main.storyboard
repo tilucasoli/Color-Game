@@ -10,7 +10,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Game_Color" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -135,7 +134,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYg-fm-dgI">
-                                <rect key="frame" x="152" y="732" width="70" height="33"/>
+                                <rect key="frame" x="152" y="727" width="70" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Começar"/>
@@ -152,19 +151,21 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="blueLbl" destination="qJP-jG-NVH" id="CJp-2U-rNV"/>
-                        <outlet property="blueSlr" destination="JXh-X9-QXy" id="Pue-Ef-c1F"/>
                         <outlet property="firstLbl" destination="eH1-u7-oNX" id="OOj-Lb-eBK"/>
-                        <outlet property="greenLbl" destination="49R-hw-l7e" id="9sB-rY-0a4"/>
-                        <outlet property="greenSlr" destination="o0g-Qt-K5P" id="Xrv-bS-ywJ"/>
+                        <outlet property="firstSideLbl" destination="Hgg-EF-amV" id="Htu-tz-mrr"/>
+                        <outlet property="firstSldr" destination="goe-dz-enN" id="Qyo-oj-CF3"/>
                         <outlet property="randomView" destination="DVO-ep-53P" id="0Vw-7H-jq4"/>
-                        <outlet property="redLbl" destination="Hgg-EF-amV" id="Htu-tz-mrr"/>
-                        <outlet property="redSlr" destination="goe-dz-enN" id="Qyo-oj-CF3"/>
+                        <outlet property="rgbOrHsb" destination="mHg-Jn-VVI" id="CjW-6v-K4r"/>
                         <outlet property="secondLbl" destination="VGQ-MQ-whW" id="81t-6V-4iL"/>
+                        <outlet property="secondSideLbl" destination="49R-hw-l7e" id="9sB-rY-0a4"/>
+                        <outlet property="secondSldr" destination="o0g-Qt-K5P" id="Xrv-bS-ywJ"/>
                         <outlet property="thirdLbl" destination="8J1-ba-veT" id="eSV-br-b5S"/>
+                        <outlet property="thirdSideLbl" destination="qJP-jG-NVH" id="CJp-2U-rNV"/>
+                        <outlet property="thirdSldr" destination="JXh-X9-QXy" id="Pue-Ef-c1F"/>
                         <outlet property="yourView" destination="W2F-vV-y6G" id="m34-Gh-paN"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="137.4384236453202"/>
         </scene>

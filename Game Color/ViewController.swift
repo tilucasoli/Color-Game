@@ -14,52 +14,79 @@ class ViewController: UIViewController {
     @IBOutlet weak var secondLbl: UILabel!
     @IBOutlet weak var thirdLbl: UILabel!
     
-    @IBAction func changeScheme(_ sender: Any) {
-        firstLbl.text = "Hue"
-        secondLbl.text = "Saturation"
-        thirdLbl.text = "Brightness"
-    }
-    
     @IBOutlet weak var randomView: UIView!
     @IBOutlet weak var yourView: UIView!
     
-    @IBOutlet weak var redSlr: UISlider!
-    @IBOutlet weak var greenSlr: UISlider!
-    @IBOutlet weak var blueSlr: UISlider!
+    @IBOutlet weak var firstSldr: UISlider!
+    @IBOutlet weak var secondSldr: UISlider!
+    @IBOutlet weak var thirdSldr: UISlider!
     
-    @IBOutlet weak var redLbl: UILabel!
-    @IBOutlet weak var greenLbl: UILabel!
-    @IBOutlet weak var blueLbl: UILabel!
+    @IBOutlet weak var firstSideLbl: UILabel!
+    @IBOutlet weak var secondSideLbl: UILabel!
+    @IBOutlet weak var thirdSideLbl: UILabel!
     
     var colorSlr = ColorSlider()
     
+    @IBOutlet weak var rgbOrHsb: UISegmentedControl!
+    
+    let rgb = ColorScheme(first: "Red", second: "Green", third: "Blue")
+    let hsb = ColorScheme(first: "Hue", second: "Saturation", third: "Brightness")
+    
+    @IBAction func changeScheme(_ sender: Any) {
+        let option = rgbOrHsb.selectedSegmentIndex
+        
+        if option == 0 {
+            firstLbl.text = rgb.firstLbl
+            secondLbl.text = rgb.secondLbl
+            thirdLbl.text = rgb.thirdLbl
+            
+            firstSldr.maximumValue = rgb.rgbMaxValue
+            secondSldr.maximumValue = rgb.rgbMaxValue
+            thirdSldr.maximumValue = rgb.rgbMaxValue
+            
+        }
+        else {
+            firstLbl.text = hsb.firstLbl
+            secondLbl.text = hsb.secondLbl
+            thirdLbl.text = hsb.thirdLbl
+            
+            firstSldr.maximumValue = hsb.hue
+            secondSldr.maximumValue = hsb.saturation
+            thirdSldr.maximumValue = rgb.brightness
+        }
+        
+    }
+    
+    // Slider Configuration
     @IBAction func redSldr(_ sender: Any) {
-        redLbl.text = String(Int(redSlr.value))
-        colorSlr.red = CGFloat(redSlr.value/255)
+        firstSideLbl.text = String(Int(firstSldr.value))
+        colorSlr.red = CGFloat(firstSldr.value/255)
         
         yourView.backgroundColor = UIColor(displayP3Red: colorSlr.red, green: colorSlr.green, blue: colorSlr.blue, alpha: 1)
     }
     
     @IBAction func greenSldr(_ sender: Any) {
-        greenLbl.text = String(Int(greenSlr.value))
-        colorSlr.green = CGFloat(greenSlr.value/255)
+        secondSideLbl.text = String(Int(secondSldr.value))
+        colorSlr.green = CGFloat(secondSldr.value/255)
         
         yourView.backgroundColor = UIColor(displayP3Red: colorSlr.red, green: colorSlr.green, blue: colorSlr.blue, alpha: 1)
     }
     
     @IBAction func blueSldr(_ sender: Any) {
-        blueLbl.text = String(Int(blueSlr.value))
-        colorSlr.blue = CGFloat(blueSlr.value/255)
+        thirdSideLbl.text = String(Int(thirdSldr.value))
+        colorSlr.blue = CGFloat(thirdSldr.value/255)
         
         yourView.backgroundColor = UIColor(displayP3Red: colorSlr.red, green: colorSlr.green, blue: colorSlr.blue, alpha: 1)
 
     }
     
+    // Generate random color
     @IBAction func btnGenerate(_ sender: Any){
         randomView.backgroundColor = UIColor.random
         
     }
     
+    // did load
     override func viewDidLoad() {
         super.viewDidLoad()
         shadowDefault(view: randomView)

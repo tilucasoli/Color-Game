@@ -15,6 +15,7 @@
 		03D907FB2458AB7500F9839C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03D907F92458AB7500F9839C /* LaunchScreen.storyboard */; };
 		03D908062458AB7500F9839C /* Game_ColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D908052458AB7500F9839C /* Game_ColorTests.swift */; };
 		03D908112458AB7500F9839C /* Game_ColorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D908102458AB7500F9839C /* Game_ColorUITests.swift */; };
+		03D9082C2459DCE000F9839C /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D9082B2459DCE000F9839C /* ColorScheme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		03D9080C2458AB7500F9839C /* Game ColorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Game ColorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03D908102458AB7500F9839C /* Game_ColorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_ColorUITests.swift; sourceTree = "<group>"; };
 		03D908122458AB7500F9839C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03D9082B2459DCE000F9839C /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				03D907EE2458AB6F00F9839C /* AppDelegate.swift */,
 				03D907F02458AB6F00F9839C /* SceneDelegate.swift */,
 				03D907F22458AB6F00F9839C /* ViewController.swift */,
+				03D9082B2459DCE000F9839C /* ColorScheme.swift */,
 				03D907F42458AB6F00F9839C /* Main.storyboard */,
 				03D907F72458AB7500F9839C /* Assets.xcassets */,
 				03D907F92458AB7500F9839C /* LaunchScreen.storyboard */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03D9082C2459DCE000F9839C /* ColorScheme.swift in Sources */,
 				03D907F32458AB6F00F9839C /* ViewController.swift in Sources */,
 				03D907EF2458AB6F00F9839C /* AppDelegate.swift in Sources */,
 				03D907F12458AB6F00F9839C /* SceneDelegate.swift in Sources */,
