@@ -14,8 +14,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var secondLbl: UILabel!
     @IBOutlet weak var thirdLbl: UILabel!
     
-    @IBOutlet weak var timer: UILabel!
-    
     @IBAction func changeScheme(_ sender: Any) {
         firstLbl.text = "Hue"
         secondLbl.text = "Saturation"
@@ -66,6 +64,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         shadowDefault(view: randomView)
         shadowDefault(view: yourView)
+        
+    }
 
 }
 
