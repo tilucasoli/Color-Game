@@ -154,7 +154,6 @@
                         <outlet property="redSlr" destination="goe-dz-enN" id="Qyo-oj-CF3"/>
                         <outlet property="secondLbl" destination="VGQ-MQ-whW" id="81t-6V-4iL"/>
                         <outlet property="thirdLbl" destination="8J1-ba-veT" id="eSV-br-b5S"/>
-                        <outlet property="timer" destination="do7-za-LJu" id="S6S-2q-lFg"/>
                         <outlet property="yourView" destination="W2F-vV-y6G" id="m34-Gh-paN"/>
                     </connections>
                 </viewController>
