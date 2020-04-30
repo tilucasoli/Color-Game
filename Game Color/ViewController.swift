@@ -43,7 +43,7 @@ class ViewController: UIViewController {
             firstSldr.maximumValue = rgb.rgbMaxValue
             secondSldr.maximumValue = rgb.rgbMaxValue
             thirdSldr.maximumValue = rgb.rgbMaxValue
-            
+            print("Hello")
         }
         else {
             firstLbl.text = hsb.firstLbl
