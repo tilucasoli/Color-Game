@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var timer: UILabel!
+    
     @IBOutlet weak var firstLbl: UILabel!
     @IBOutlet weak var secondLbl: UILabel!
     @IBOutlet weak var thirdLbl: UILabel!
@@ -25,9 +27,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var secondSideLbl: UILabel!
     @IBOutlet weak var thirdSideLbl: UILabel!
     
-    var colorSlr = ColorSlider()
-    
     @IBOutlet weak var rgbOrHsb: UISegmentedControl!
+    
+    // Criando as classes que armazenaram os dados das cores RGB e HSB
+    var dataRgbColors = ColorSlider()
+    var dataHsbColors = ColorSlider()
     
     let rgb = ColorScheme(first: "Red", second: "Green", third: "Blue")
     let hsb = ColorScheme(first: "Hue", second: "Saturation", third: "Brightness")
@@ -43,7 +47,7 @@ class ViewController: UIViewController {
             firstSldr.maximumValue = rgb.rgbMaxValue
             secondSldr.maximumValue = rgb.rgbMaxValue
             thirdSldr.maximumValue = rgb.rgbMaxValue
-            print("Hello")
+            
         }
         else {
             firstLbl.text = hsb.firstLbl
@@ -59,28 +63,51 @@ class ViewController: UIViewController {
     
     // Slider Configuration
     @IBAction func redSldr(_ sender: Any) {
+        let option = rgbOrHsb.selectedSegmentIndex
         firstSideLbl.text = String(Int(firstSldr.value))
-        colorSlr.red = CGFloat(firstSldr.value/255)
         
-        yourView.backgroundColor = UIColor(displayP3Red: colorSlr.red, green: colorSlr.green, blue: colorSlr.blue, alpha: 1)
-    }
-    
-    @IBAction func greenSldr(_ sender: Any) {
-        secondSideLbl.text = String(Int(secondSldr.value))
-        colorSlr.green = CGFloat(secondSldr.value/255)
-        
-        yourView.backgroundColor = UIColor(displayP3Red: colorSlr.red, green: colorSlr.green, blue: colorSlr.blue, alpha: 1)
-    }
-    
-    @IBAction func blueSldr(_ sender: Any) {
-        thirdSideLbl.text = String(Int(thirdSldr.value))
-        colorSlr.blue = CGFloat(thirdSldr.value/255)
-        
-        yourView.backgroundColor = UIColor(displayP3Red: colorSlr.red, green: colorSlr.green, blue: colorSlr.blue, alpha: 1)
+        if option == 0 {
+            dataRgbColors.first = CGFloat(firstSldr.value/255)
+            yourView.backgroundColor = UIColor(displayP3Red: dataRgbColors.first, green: dataRgbColors.second, blue: dataRgbColors.third, alpha: 1)
+        }
+        else {
+            dataHsbColors.first = CGFloat(firstSldr.value/360)
+            yourView.backgroundColor = UIColor(hue: dataHsbColors.first, saturation: dataHsbColors.second, brightness: dataHsbColors.third, alpha: 1)
+        }
 
     }
     
-    // Generate random color
+    @IBAction func greenSldr(_ sender: Any) {
+        let option = rgbOrHsb.selectedSegmentIndex
+        secondSideLbl.text = String(Int(secondSldr.value))
+        
+        if option == 0 {
+            dataRgbColors.second = CGFloat(secondSldr.value/255)
+            yourView.backgroundColor = UIColor(displayP3Red: dataRgbColors.first, green: dataRgbColors.second, blue: dataRgbColors.third, alpha: 1)
+        }
+        else {
+            dataHsbColors.second = CGFloat(secondSldr.value/100)
+            yourView.backgroundColor = UIColor(hue: dataHsbColors.first, saturation: dataHsbColors.second, brightness: dataHsbColors.third, alpha: 1)
+        }
+        
+    }
+    
+    @IBAction func blueSldr(_ sender: Any) {
+        let option = rgbOrHsb.selectedSegmentIndex
+        thirdSideLbl.text = String(Int(thirdSldr.value))
+        
+        if option == 0 {
+            dataRgbColors.third = CGFloat(thirdSldr.value/255)
+            yourView.backgroundColor = UIColor(displayP3Red: dataRgbColors.first, green: dataRgbColors.second, blue: dataRgbColors.third, alpha: 1)
+        }
+        else {
+            dataHsbColors.third = CGFloat(thirdSldr.value/100)
+            yourView.backgroundColor = UIColor(hue: dataHsbColors.first, saturation: dataHsbColors.second, brightness: dataHsbColors.third, alpha: 1)
+        }
+
+    }
+    
+    // start the game
     @IBAction func btnGenerate(_ sender: Any){
         randomView.backgroundColor = UIColor.random
         
@@ -97,10 +124,10 @@ class ViewController: UIViewController {
 }
 
 class ColorSlider {
-    var red: CGFloat = 0
-    var green: CGFloat = 0
-    var blue: CGFloat = 0
-    
+    var first: CGFloat = 0
+    var second: CGFloat = 0
+    var third: CGFloat = 0
+
 }
 
 func shadowDefault(view: UIView){

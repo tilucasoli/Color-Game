@@ -162,6 +162,7 @@
                         <outlet property="thirdLbl" destination="8J1-ba-veT" id="eSV-br-b5S"/>
                         <outlet property="thirdSideLbl" destination="qJP-jG-NVH" id="CJp-2U-rNV"/>
                         <outlet property="thirdSldr" destination="JXh-X9-QXy" id="Pue-Ef-c1F"/>
+                        <outlet property="timer" destination="do7-za-LJu" id="sAe-ue-RbH"/>
                         <outlet property="yourView" destination="W2F-vV-y6G" id="m34-Gh-paN"/>
                     </connections>
                 </viewController>
