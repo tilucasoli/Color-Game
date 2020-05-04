@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03492DB4245FAF960062F654 /* DataColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03492DB3245FAF960062F654 /* DataColors.swift */; };
 		03D907EF2458AB6F00F9839C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D907EE2458AB6F00F9839C /* AppDelegate.swift */; };
 		03D907F12458AB6F00F9839C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D907F02458AB6F00F9839C /* SceneDelegate.swift */; };
 		03D907F32458AB6F00F9839C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D907F22458AB6F00F9839C /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03492DB3245FAF960062F654 /* DataColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataColors.swift; sourceTree = "<group>"; };
 		03D907EB2458AB6F00F9839C /* Game Color.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game Color.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		03D907EE2458AB6F00F9839C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03D907F02458AB6F00F9839C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03492DB0245F462A0062F654 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				03D9082B2459DCE000F9839C /* ColorScheme.swift */,
+				03492DB3245FAF960062F654 /* DataColors.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		03492DB1245F463D0062F654 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				03D907F42458AB6F00F9839C /* Main.storyboard */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		03492DB2245F46450062F654 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				03D907F22458AB6F00F9839C /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		03D907E22458AB6F00F9839C = {
 			isa = PBXGroup;
 			children = (
@@ -101,11 +128,11 @@
 		03D907ED2458AB6F00F9839C /* Game Color */ = {
 			isa = PBXGroup;
 			children = (
+				03492DB2245F46450062F654 /* Controller */,
+				03492DB1245F463D0062F654 /* VIew */,
+				03492DB0245F462A0062F654 /* Model */,
 				03D907EE2458AB6F00F9839C /* AppDelegate.swift */,
 				03D907F02458AB6F00F9839C /* SceneDelegate.swift */,
-				03D907F22458AB6F00F9839C /* ViewController.swift */,
-				03D9082B2459DCE000F9839C /* ColorScheme.swift */,
-				03D907F42458AB6F00F9839C /* Main.storyboard */,
 				03D907F72458AB7500F9839C /* Assets.xcassets */,
 				03D907F92458AB7500F9839C /* LaunchScreen.storyboard */,
 				03D907FC2458AB7500F9839C /* Info.plist */,
@@ -266,6 +293,7 @@
 				03D907F32458AB6F00F9839C /* ViewController.swift in Sources */,
 				03D907EF2458AB6F00F9839C /* AppDelegate.swift in Sources */,
 				03D907F12458AB6F00F9839C /* SceneDelegate.swift in Sources */,
+				03492DB4245FAF960062F654 /* DataColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

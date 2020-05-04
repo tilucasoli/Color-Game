@@ -7,3 +7,16 @@
 //
 
 import Foundation
+import UIKit
+
+class DataColors {
+    var first: CGFloat = 0
+    var second: CGFloat
+    var third: CGFloat
+
+    init(_ second: CGFloat, _ third: CGFloat) {
+        self.second = second
+        self.third = third
+    }
+
+}

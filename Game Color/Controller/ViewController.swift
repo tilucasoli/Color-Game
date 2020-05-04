@@ -30,33 +30,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var rgbOrHsb: UISegmentedControl!
     
     // Criando as classes que armazenaram os dados das cores RGB e HSB
-    var dataRgbColors = ColorSlider()
-    var dataHsbColors = ColorSlider()
+    var dataRgbColors = DataColors(0, 0)
+    var dataHsbColors = DataColors(1, 1)
     
-    let rgb = ColorScheme(first: "Red", second: "Green", third: "Blue")
-    let hsb = ColorScheme(first: "Hue", second: "Saturation", third: "Brightness")
+    let rgb = ColorScheme(first: "Red", second: "Green", third: "Blue", 255, 255, 255)
+    let hsb = ColorScheme(first: "Hue", second: "Saturation", third: "Brightness", 360, 100, 100)
     
     @IBAction func changeScheme(_ sender: Any) {
         let option = rgbOrHsb.selectedSegmentIndex
         
         if option == 0 {
-            firstLbl.text = rgb.firstLbl
-            secondLbl.text = rgb.secondLbl
-            thirdLbl.text = rgb.thirdLbl
-            
-            firstSldr.maximumValue = rgb.rgbMaxValue
-            secondSldr.maximumValue = rgb.rgbMaxValue
-            thirdSldr.maximumValue = rgb.rgbMaxValue
-            
-        }
-        else {
-            firstLbl.text = hsb.firstLbl
-            secondLbl.text = hsb.secondLbl
-            thirdLbl.text = hsb.thirdLbl
-            
-            firstSldr.maximumValue = hsb.hue
-            secondSldr.maximumValue = hsb.saturation
-            thirdSldr.maximumValue = rgb.brightness
+            refresh(colorScheme: rgb, dataColors: dataRgbColors, 255, 255, 255)
+        } else {
+            refresh(colorScheme: hsb, dataColors: dataHsbColors, 360, 100, 100)
         }
         
     }
@@ -69,8 +55,7 @@ class ViewController: UIViewController {
         if option == 0 {
             dataRgbColors.first = CGFloat(firstSldr.value/255)
             yourView.backgroundColor = UIColor(displayP3Red: dataRgbColors.first, green: dataRgbColors.second, blue: dataRgbColors.third, alpha: 1)
-        }
-        else {
+        } else {
             dataHsbColors.first = CGFloat(firstSldr.value/360)
             yourView.backgroundColor = UIColor(hue: dataHsbColors.first, saturation: dataHsbColors.second, brightness: dataHsbColors.third, alpha: 1)
         }
@@ -84,8 +69,7 @@ class ViewController: UIViewController {
         if option == 0 {
             dataRgbColors.second = CGFloat(secondSldr.value/255)
             yourView.backgroundColor = UIColor(displayP3Red: dataRgbColors.first, green: dataRgbColors.second, blue: dataRgbColors.third, alpha: 1)
-        }
-        else {
+        } else {
             dataHsbColors.second = CGFloat(secondSldr.value/100)
             yourView.backgroundColor = UIColor(hue: dataHsbColors.first, saturation: dataHsbColors.second, brightness: dataHsbColors.third, alpha: 1)
         }
@@ -99,8 +83,7 @@ class ViewController: UIViewController {
         if option == 0 {
             dataRgbColors.third = CGFloat(thirdSldr.value/255)
             yourView.backgroundColor = UIColor(displayP3Red: dataRgbColors.first, green: dataRgbColors.second, blue: dataRgbColors.third, alpha: 1)
-        }
-        else {
+        } else {
             dataHsbColors.third = CGFloat(thirdSldr.value/100)
             yourView.backgroundColor = UIColor(hue: dataHsbColors.first, saturation: dataHsbColors.second, brightness: dataHsbColors.third, alpha: 1)
         }
@@ -121,13 +104,32 @@ class ViewController: UIViewController {
         
     }
 
-}
+    func refresh(colorScheme: ColorScheme, dataColors: DataColors,_ firstMultiply: Float,_ secondMultiply: Float, _ thirdMultiply: Float){
+        
+        firstLbl.text = colorScheme.firstLbl
+        secondLbl.text = colorScheme.secondLbl
+        thirdLbl.text = colorScheme.thirdLbl
+        
+        firstSideLbl.text = String(Int(Float(dataColors.first) * firstMultiply))
+        secondSideLbl.text = String(Int(Float(dataColors.second) * secondMultiply))
+        thirdSideLbl.text = String(Int(Float(dataColors.third) * thirdMultiply))
 
-class ColorSlider {
-    var first: CGFloat = 0
-    var second: CGFloat = 0
-    var third: CGFloat = 0
-
+        firstSldr.maximumValue = colorScheme.firstValue
+        secondSldr.maximumValue = colorScheme.secondValue
+        thirdSldr.maximumValue = colorScheme.thirdValue
+        
+        firstSldr.value = Float(dataColors.first) * firstMultiply
+        secondSldr.value = Float(dataColors.second) * secondMultiply
+        thirdSldr.value = Float(dataColors.third) * thirdMultiply
+        
+        if colorScheme.firstValue == 255 {
+            yourView.backgroundColor = UIColor(displayP3Red: dataColors.first, green: dataColors.second, blue: dataColors.third, alpha: 1)
+        } else {
+            yourView.backgroundColor = UIColor(hue: dataColors.first, saturation: dataColors.second, brightness: dataColors.third, alpha: 1)
+        }
+        
+    }
+    
 }
 
 func shadowDefault(view: UIView){

@@ -15,16 +15,17 @@ struct ColorScheme {
     let secondLbl: String
     let thirdLbl: String
     
-    // max values
-    let rgbMaxValue: Float = 255
-
-    let hue: Float = 360
-    let saturation: Float = 100
-    let brightness: Float = 100
+    let firstValue: Float
+    let secondValue: Float
+    let thirdValue: Float
     
-    init(first: String, second: String, third: String) {
+    init(first: String, second: String, third: String, _ firstValue: Float, _ secondValue: Float, _ thirdValue: Float) {
         self.firstLbl = first
         self.secondLbl = second
         self.thirdLbl = third
+        
+        self.firstValue = firstValue
+        self.secondValue = secondValue
+        self.thirdValue = thirdValue
     }
 }
